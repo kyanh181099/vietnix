@@ -1,0 +1,22 @@
+<?php
+namespace vietnixcachePlugin\Model\Api\Whm\Functions;
+
+use vietnixcachePlugin\Model\Api\ApiMethodInterface;
+use vietnixcachePlugin\Model\Api\Whm\WhmApi;
+
+class ListDomains extends WhmApi implements ApiMethodInterface
+{
+
+    public $method = 'GET';
+    private $path = '/listaccts';
+
+    public function getUrl()
+    {
+        return $this->detailsProvider->getEndpoint() . '/json-api/' . $this->path . '?api.version=1';
+    }
+
+    public function handleResponse($response)
+    {
+        return $response;
+    }
+}
